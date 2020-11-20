@@ -23,11 +23,11 @@ export const Characters = () => {
   return (
     <div className={classes.container}>
       <Navigation />
-      {loading && (
+      {loading ? (
         <div className={classes.loaderContainer}>
           <CircularProgress />
         </div>
-      )}
+      ) : null}
       {!loading && characters.map((char) => <Character char={char} />)}
     </div>
   );
